@@ -1,5 +1,6 @@
 import autoLoad from 'fastify-autoload'
 import bookshelf from 'fastify-bookshelfjs'
+import multer from 'fastify-multer'
 import { resolve } from 'path'
 
 const {
@@ -11,6 +12,8 @@ const {
 } = process.env
 
 export default async (fastify, options) => {
+  fastify.register(multer.contentParser)
+
   fastify.register(bookshelf, {
     client: 'pg',
     connection: {
