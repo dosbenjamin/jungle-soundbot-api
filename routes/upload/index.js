@@ -8,9 +8,11 @@ export default async fastify => {
     method: 'POST',
     url: '/',
     preHandler: upload.single('sound'),
-    handler: ({ body: { author, command }, file }) => {
-      console.info(author, command)
-      console.info(file)
+    handler: async ({ body: { author, command }, file }) => {
+      const { knex } = await fastify.bookshelf
+
+      return knex('sounds')
+        .insert({ command, author })
     }
   })
 }
