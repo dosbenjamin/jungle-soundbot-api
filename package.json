@@ -3,5 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
-  "type": "module"
+  "type": "module",
+  "scripts": {
+    "start": "fastify start index.js"
+  },
+  "dependencies": {
+    "fastify": "^3.14.1",
+    "fastify-autoload": "^3.6.0",
+    "fastify-cli": "^2.9.1"
+  }
 }
