@@ -10,8 +10,6 @@ const {
   DATABASE_PASSWORD
 } = process.env
 
-const db = `postgres://${ DATABASE_USER }:${ DATABASE_PASSWORD }@${ DATABASE_URL }/${ DATABASE_NAME }`
-
 export default async (fastify, options) => {
   fastify.register(bookshelf, {
     client: 'pg',
