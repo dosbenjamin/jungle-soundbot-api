@@ -8,8 +8,9 @@ export default async fastify => {
     method: 'POST',
     url: '/',
     preHandler: upload.single('sound'),
-    handler: (request: { body, file }) => {
-      console.info(body, file)
+    handler: ({ body: { author, command }, file }) => {
+      console.info(author, command)
+      console.info(file)
     }
   })
 }
