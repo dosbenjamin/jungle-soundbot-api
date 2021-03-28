@@ -14,7 +14,7 @@ cloudinary.config({
 })
 
 const cloudUpload = ({ buffer }) => {
-  const file = `data:text/plain;base64,${ buffer.toString('base64') }`
+  const file = `data:audio/mpeg;base64,${ buffer.toString('base64') }`
 
   return cloudinary.v2.uploader
     .unsigned_upload(file, 'jyeiofw9', {
