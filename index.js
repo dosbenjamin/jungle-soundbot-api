@@ -4,7 +4,7 @@ import multer from 'fastify-multer'
 import { resolve } from 'path'
 
 const {
-  DATABASE_URL,
+  DATABASE_HOST,
   DATABASE_PORT,
   DATABASE_NAME,
   DATABASE_USER,
@@ -17,7 +17,7 @@ export default async (fastify, options) => {
   fastify.register(bookshelf, {
     client: 'pg',
     connection: {
-      host: DATABASE_URL,
+      host: DATABASE_HOST,
       user: DATABASE_USER,
       password: DATABASE_PASSWORD,
       database: DATABASE_NAME
