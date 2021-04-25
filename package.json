@@ -13,7 +13,9 @@
     "fastify-autoload": "^3.6.0",
     "fastify-bookshelfjs": "^1.1.0",
     "fastify-cli": "^2.9.1",
+    "fastify-cors": "^5.2.0",
     "fastify-multer": "^2.0.2",
+    "fastify-plugin": "^3.0.0",
     "pg": "^8.5.1"
   }
 }
