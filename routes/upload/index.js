@@ -31,11 +31,20 @@ export default async fastify => {
     method: 'POST',
     url: '/',
     preHandler: upload.single('sound'),
-    handler: async ({ body: { author, command }, file }) => {
-      const { url } = await cloudUpload(file)
+    handler: async ({ body: { author, command }, file }, reply) => {
+      try {
+        const { url } = await cloudUpload(file)
 
-      return fastify.bookshelf.knex('sounds')
-        .insert({ command, author, url })
+        const result = await fastify.bookshelf.knex('sounds')
+          .insert({ command, author, url })
+
+        if (result) return result
+      } catch ({ code }) {
+        if (code === '23505') {
+          const error = new Error('This command already exists.')
+          reply.code(409).send(error)
+        }
+      }
     }
   })
 }
