@@ -33,12 +33,19 @@ export default async fastify => {
     preHandler: upload.single('sound'),
     handler: async ({ body: { author, command }, file }, reply) => {
       try {
+        const [result] = await fastify.bookshelf.knex('sounds')
+          .where({ command })
+
+        if (result) {
+          await fastify.bookshelf.knex('sounds')
+            .insert({ command, author })
+          return false
+        }
+
         const { url } = await cloudUpload(file)
 
-        const result = await fastify.bookshelf.knex('sounds')
-          .insert({ command, author, url })
-
-        if (result) return result
+        return fastify.bookshelf.knex('sounds')
+          .insert({ command, author })
       } catch ({ code }) {
         if (code === '23505') {
           const error = new Error('This command already exists.')
