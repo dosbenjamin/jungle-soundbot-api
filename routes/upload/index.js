@@ -45,7 +45,7 @@ export default async fastify => {
         const { url } = await cloudUpload(file)
 
         return fastify.bookshelf.knex('sounds')
-          .insert({ command, author })
+          .insert({ command, author, url })
       } catch ({ code }) {
         if (code === '23505') {
           const error = new Error('This command already exists.')
