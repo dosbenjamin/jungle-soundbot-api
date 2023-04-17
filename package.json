@@ -8,9 +8,9 @@
     "start": "fastify start index.js"
   },
   "dependencies": {
+    "@fastify/autoload": "^4.0.0",
     "cloudinary": "^1.25.1",
     "fastify": "^3.14.1",
-    "fastify-autoload": "^3.6.0",
     "fastify-bookshelfjs": "^1.1.0",
     "fastify-cli": "^2.9.1",
     "fastify-cors": "^5.2.0",

@@ -1,4 +1,4 @@
-import autoLoad from 'fastify-autoload'
+import autoLoad from '@fastify/autoload'
 import bookshelf from 'fastify-bookshelfjs'
 import multer from 'fastify-multer'
 import { resolve } from 'path'

@@ -1,9 +1,9 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@fastify/autoload': ^4.0.0
   cloudinary: ^1.25.1
   fastify: ^3.14.1
-  fastify-autoload: ^3.6.0
   fastify-bookshelfjs: ^1.1.0
   fastify-cli: ^2.9.1
   fastify-cors: ^5.2.0
@@ -12,9 +12,9 @@ specifiers:
   pg: ^8.5.1
 
 dependencies:
+  '@fastify/autoload': 4.0.0
   cloudinary: 1.36.1
   fastify: 3.29.5
-  fastify-autoload: 3.13.0
   fastify-bookshelfjs: 1.1.0
   fastify-cli: 2.15.0
   fastify-cors: 5.2.0
@@ -35,6 +35,13 @@ packages:
     resolution: {integrity: sha512-gvCOUNpXsWrIQ3A4aXCLIdblL0tDq42BG/2Xw7oxbil9h11uow10ztS2GuFazNBfjbrsZ5nl+nPl5jDSjj5TSg==}
     dependencies:
       ajv: 6.12.6
+    dev: false
+
+  /@fastify/autoload/4.0.0:
+    resolution: {integrity: sha512-mne+IEjcMa1UsypjjyXq5WMj0rTM7JTv6mxBD2o/wq9o/v6Eeyo1bCCnRAglbw/vc9IjQp5CxMg/n5lJmXR8sQ==}
+    dependencies:
+      pkg-up: 3.1.0
+      semver: 7.4.0
     dev: false
 
   /@fastify/busboy/1.2.1:
@@ -812,20 +819,6 @@ packages:
 
   /fast-safe-stringify/2.1.1:
     resolution: {integrity: sha512-W+KJc2dmILlPplD/H4K9l9LcAHAfPtP6BY84uVLXQ6Evcz9Lcg33Y2z1IVblT6xdY54PXYVHEv+0Wpq8Io6zkA==}
-    dev: false
-
-  /fastify-autoload/3.12.0:
-    resolution: {integrity: sha512-qm8HG8V24A0AdcIjGMMTnyKQj6yzEbdcXHbWjzPtYPReGo4D4Ki7oRLDocYQJVpaOxlcLJSbadfMhZTu3+G6oQ==}
-    dependencies:
-      pkg-up: 3.1.0
-      semver: 7.4.0
-    dev: false
-
-  /fastify-autoload/3.13.0:
-    resolution: {integrity: sha512-+Dbsf7wUxf9KLBHnbcdI1MTUGPHAnjWnbbq1bZm4+b2ghX+goK8HBkWOpS4JK1GAiripoDoyUBw18wu8uDZKuA==}
-    dependencies:
-      fastify-autoload-deprecated: /fastify-autoload/3.12.0
-      process-warning: 1.0.0
     dev: false
 
   /fastify-bookshelfjs/1.1.0:
